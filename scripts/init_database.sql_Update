@@ -1,8 +1,9 @@
 /*
 Create database (Safe Method: No Data Loss)
+
+Purpose: 
+This script ensures the safety concern experienced from the earlier script is adressed by ensuring the database DataWarehouse is NOT DELETED even if it exists.
 */
- Purpose: 
-/*This script ensures the safety concern experienced from the earlier script is adressed by ensuring the database DataWarehouse is NOT DELETED even if it exists.*/
 
 USE master;
 GO
