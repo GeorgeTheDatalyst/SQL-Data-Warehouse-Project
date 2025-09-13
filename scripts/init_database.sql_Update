@@ -2,7 +2,7 @@
 Create database (Safe Method: No Data Loss)
 */
  Purpose: 
-This script ensures the safety concern experienced from the earlier script is adressed by ensuring the database DataWarehouse is NOT DELETED even if it exists.
+/*This script ensures the safety concern experienced from the earlier script is adressed by ensuring the database DataWarehouse is NOT DELETED even if it exists.*/
 
 USE master;
 GO
@@ -17,10 +17,11 @@ BEGIN
 END
 GO
 
-How it works:
+/* How it works:
 
 - sys.databases lists all databases on the server.
 
 - The IF NOT EXISTS condition ensures the CREATE DATABASE runs only if DataWarehouse isn’t already there.
 
 - If it exists, the script just skips the CREATE step — no drop, no data loss.
+*/
