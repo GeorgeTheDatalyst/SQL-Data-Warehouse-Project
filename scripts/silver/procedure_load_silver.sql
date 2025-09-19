@@ -60,7 +60,7 @@ PRINT'------------------------------------------------';
 
 	SELECT 
 	sls_ord_num,
-	SUBSTRING(sls_prd_key,1,7) AS sls_prd_key,
+	sls_prd_key,
 	sls_cust_id,
 	CASE WHEN sls_order_dt=0 or LEN(sls_order_dt) != 8 THEN NULL
 	ELSE
@@ -87,8 +87,7 @@ PRINT'------------------------------------------------';
 	ELSE sls_price
 	END AS sls_price
 
-	from bronze.crm_sales_details
-	where sls_sales != sls_quantity*sls_price;
+	from bronze.crm_sales_details;
 
 	SET @End_time=GETDATE();
 	PRINT 'Execution End Time: '+CAST(@End_time AS NVARCHAR);
