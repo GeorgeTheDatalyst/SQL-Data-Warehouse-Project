@@ -7,7 +7,7 @@ transforming, and serving data from CRM and ERP systems. It supports analytics, 
 
 ## 🧱 Architecture Overview
 
-![Medallion Architecture](attachments/CnFwJ8tKq1X977kG8WpmA.jpeg)
+![Medallion Architecture](docs/implimentation-docs/Data Architecture.jpg)
 
 We use the Medallion Architecture to organize our data warehouse into three progressive layers:
 
@@ -36,7 +36,7 @@ Supported formats include:
 
 ## 🔄 Data Flow
 
-![Data Flow Diagram](attachments/7hzLsKRrSV43DCP9XnVJV.png)
+![Data Flow Diagram](docs/implimentation-docs/Data Flow Diagram.png)
 
 The pipeline progresses through the following stages:
 
@@ -72,7 +72,7 @@ They follow a **star schema** for optimal performance and usability.
 
 ## 🔗 Integration Model
 
-![Integration Model](attachments/P9RN3ri6CC7TsHP5sCyeq.jpeg)
+![Integration Model](docs/implimentation-docs/Intergration Model.jpg)
 
 This diagram illustrates how CRM and ERP tables relate:
 
