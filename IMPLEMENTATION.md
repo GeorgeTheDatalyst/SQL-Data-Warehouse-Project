@@ -26,12 +26,6 @@ This warehouse integrates data from two primary systems:
 - **CRM System**: Customer profiles, sales transactions, product details
 - **ERP System**: Extended customer attributes, product categories, general ledger codes
 
-Supported formats include:
-- CSV
-- Excel
-- JSON
-- Folder-based ingestion
-
 ---
 
 ## 🔄 Data Flow
@@ -42,14 +36,15 @@ The pipeline progresses through the following stages:
 
 ### 🔹 Bronze Layer – Raw Ingestion
 Tables:
-- `crm_cust_raw`, `crm_cust_attr`, `crm_sales_raw`, `crm_sales_details`
-- `erp_cust_attr`, `erp_sales_raw`, `erp_sales_attr`, `erp_glcode_attr`
+- `crm_cust_info`, `crm_prd_info`, `crm_sales_details`
+- `erp_CUST_AZ12`, `erp_LOC_A101`, `erp_PX_CAT_G1V2`
 
 These tables capture unprocessed data directly from source systems. No transformations are applied at this stage.
 
 ### 🔸 Silver Layer – Cleansing & Structuring
 Tables:
-- `slv_cust_attr`, `slv_sales_attr`, `slv_sales_raw`, `slv_glcode_attr`
+- `crm_cust_info`, `crm_prd_info`, `crm_sales_details`
+- `erp_CUST_AZ12`, `erp_LOC_A101`, `erp_PX_CAT_G1V2`
 
 Here, we apply:
 - Deduplication
