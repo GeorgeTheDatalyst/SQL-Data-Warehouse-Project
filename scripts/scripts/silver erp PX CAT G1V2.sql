@@ -1,0 +1,18 @@
+PRINT 'Truncating table silver.erp_PX_CAT_G1V2'
+TRUNCATE TABLE silver.erp_PX_CAT_G1V2
+INSERT INTO silver.erp_PX_CAT_G1V2
+(
+ID,
+CAT,
+SUBCAT,
+MAINTENANCE
+)
+SELECT DISTINCT TOP (1000)
+       TRIM(ID) AS ID,
+       TRIM(CAT) AS CAT,
+       TRIM(SUBCAT) AS SUBCAT,
+       TRIM(MAINTENANCE) AS MAINTENANCE
+  FROM bronze.erp_PX_CAT_G1V2;
+
+ 
+ 
