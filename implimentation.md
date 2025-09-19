@@ -36,7 +36,7 @@ Supported formats include:
 
 ## 🔄 Data Flow
 
-![Data Flow Diagram](docs/implimentation-docs/Data Flow Diagram.png)
+![Data Flow Diagram](docs/implimentation-docs/DataFlowDiagram.png)
 
 The pipeline progresses through the following stages:
 
@@ -72,7 +72,7 @@ They follow a **star schema** for optimal performance and usability.
 
 ## 🔗 Integration Model
 
-![Integration Model](docs/implimentation-docs/Intergration Model.jpg)
+![Integration Model](docs/implimentation-docs/IntergrationModel.jpg)
 
 This diagram illustrates how CRM and ERP tables relate:
 
