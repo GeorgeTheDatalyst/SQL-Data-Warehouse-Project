@@ -7,7 +7,7 @@ transforming, and serving data from CRM and ERP systems. It supports analytics, 
 
 ## 🧱 Architecture Overview
 
-![Medallion Architecture](docs/implimentation-docs/Data Architecture.jpg)
+![Medallion Architecture](docs/implimentation-docs/DataArchitecture.jpg)
 
 We use the Medallion Architecture to organize our data warehouse into three progressive layers:
 
