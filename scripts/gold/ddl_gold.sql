@@ -1,15 +1,14 @@
-# 🟡 View: `gold.dim_products`
-
-## 📌 Purpose
+🟡 View: `gold.dim_products`
+/*
+ 📌 Purpose
 The `gold.dim_products` view defines the **product dimension** in the gold layer of the data warehouse. 
   It enriches CRM product data with ERP category and maintenance attributes, 
   and filters out historical products to ensure only active records are used in reporting and analytics.
-
+*/
 ---
 
-## 🧾 SQL Definition
+🧾 SQL Definition
 
-```sql
 CREATE VIEW gold.dim_products AS
 SELECT DISTINCT
     ROW_NUMBER() OVER(ORDER BY prd_start_dt, prd_key) AS product_key,
@@ -29,18 +28,19 @@ LEFT JOIN silver.erp_PX_CAT_G1V2 px ON pr.cat_ID = px.ID
 WHERE pr.prd_end_dt IS NULL; -- Filtered out historical data
 
 
-# 🟡 View: `gold.dim_customers`
+🟡 View: `gold.dim_customers`
 
-## 📌 Purpose
+/*
+  📌 Purpose
 The `gold.dim_customers` view defines the **customer dimension** in the gold layer of the data warehouse. 
   It enriches CRM customer data with demographic and location details from ERP sources, 
   creating a unified customer profile for analytics and reporting.
-
+*/
 ---
 
-## 🧾 SQL Definition
+🧾 SQL Definition
 
-```sql
+
 CREATE VIEW gold.dim_customers AS
 SELECT 
     ROW_NUMBER() OVER(ORDER BY cst_id) AS customer_key,
@@ -61,10 +61,11 @@ LEFT JOIN silver.erp_CUST_AZ12 ca ON ci.cst_key = ca.CID
 LEFT JOIN silver.erp_LOC_A101 la ON ci.cst_key = la.CID;
 
 
-# 💰 View: `gold.fact_sales`
 
-## 📌 Purpose
-The `gold.fact_sales` view defines the **sales fact table** in the gold layer of the data warehouse. 
+💰 View: `gold.fact_sales`
+
+/* 📌 Purpose
+  The `gold.fact_sales` view defines the **sales fact table** in the gold layer of the data warehouse. 
   It captures transactional sales data and enriches it with dimensional keys from `dim_products` and `dim_customers`,
   enabling robust analytical queries and reporting.
 
@@ -72,12 +73,12 @@ The `gold.fact_sales` view defines the **sales fact table** in the gold layer of
 This view is designed for use in star schema models and BI dashboards.
 Joins are performed using LEFT JOIN to preserve sales records even if dimensional data is incomplete.
 Surrogate keys (product_key, customer_key) support efficient joins and aggregations.
-
+*/
 ---
 
-## 🧾 SQL Definition
+🧾 SQL Definition
 
-```sql
+
 CREATE VIEW gold.fact_sales AS
 SELECT
     sls_ord_num AS order_number,
