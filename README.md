@@ -2,7 +2,7 @@
 Welcome to **data warehouse project** repository.
 End-to-end SQL Data Warehouse project implementing a multi-layer architecture (Bronze, Silver, Gold) with ETL pipelines, data modeling, and analytics.
 
---
+---
 
 ## Project Requirements
 
@@ -20,7 +20,7 @@ Develop a modern warehouse using SQL Server to consolidate sales data, enabling 
 - **Scope**: Focus on lates datasets only; hisorization of data is not required.
 - **Documentation**: Provide clear documentation of data model to support both business stakeholders and analytical teams.
 
-  --
+----
   ### Analytics and Reporting (Data Analytics)
 
 
