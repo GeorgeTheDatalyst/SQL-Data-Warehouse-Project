@@ -32,7 +32,7 @@ Develop a modern warehouse using SQL Server to consolidate sales data, enabling 
 
   These insights empower stakeholders with key business metrics enabling strategic business decision-making.
 
-  --
+----
 
   ## License
   This project is licensed under MIT license.
